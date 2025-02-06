@@ -19,9 +19,9 @@ options.add_argument('--remote-debugging-port=9222')
 
 
 # Initialisation du driver avec webdriver_manager
-#service = Service(ChromeDriverManager().install())
-#driver = webdriver.Chrome(service=service)
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+
 
 # Définir une liste de dictionnaires pour les sites à scraper
 sites_disponibles = {
