@@ -3,24 +3,25 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
-from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.chrome import ChromeDriverManager  # Utilisation du manager pour installer le driver
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Configuration des options du navigateur
 options = webdriver.ChromeOptions()
-options.add_argument("--headless=new")
+options.add_argument("--headless")  # Lancer sans fenêtre visible
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
-options.add_argument('--disable-dev-shm-usage')  # Évite les erreurs de mémoire
 options.add_argument('--disable-extensions')  # Désactive les extensions
 options.add_argument('--disable-infobars')  # Désactive les infobars
 options.add_argument('--remote-debugging-port=9222')
 
+
 # Initialisation du driver avec webdriver_manager
-service = Service(ChromeDriverManager().install())
-driver = webdriver.Chrome(service=service)
+#service = Service(ChromeDriverManager().install())
+#driver = webdriver.Chrome(service=service)
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
 # Définir une liste de dictionnaires pour les sites à scraper
 sites_disponibles = {
