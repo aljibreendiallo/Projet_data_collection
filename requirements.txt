@@ -1,7 +1,9 @@
+webdriver-manager
+chromium-chromedriver
 streamlit
 selenium
-webdriver-manager
+chromedriver-autoinstaller
 pandas
 matplotlib
 seaborn
-chromium-chromedriver
+numpy
