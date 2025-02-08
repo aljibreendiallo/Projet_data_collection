@@ -1,6 +1,6 @@
-streamlit
-selenium
-webdriver-manager
-pandas
-matplotlib
-seaborn
+streamlit==1.26.0
+requests==2.31.0
+beautifulsoup4==4.12.2
+pandas==2.0.3
+matplotlib==3.7.2
+seaborn==0.12.2
